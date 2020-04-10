@@ -90,14 +90,14 @@ public class RobotControl : MonoBehaviour
          }
         	 
         if (Input.GetKey(KeyCode.LeftArrow)){
-    	 	 if (Thumb_lower.transform.localRotation.x < .99){
+    	 	 if (Thumb_lower.transform.localRotation.y < .96){
         	 Thumb_lower.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
         	 Thumb_upper.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
         	}	 
         	 
     	  }
     	if (Input.GetKey(KeyCode.RightArrow)){
-    	 	if (Thumb_lower.transform.localRotation.x < .81){
+    	 	if (Thumb_lower.transform.localRotation.y > .76){
         	Thumb_lower.transform.Rotate(-1.0f, 0.0f, 0.0f, Space.Self);
         	Thumb_upper.transform.Rotate(-.50f, 0.0f, 0.0f, Space.Self);
         	 }	 
@@ -106,7 +106,7 @@ public class RobotControl : MonoBehaviour
     	  
     	  if (Input.GetKey(KeyCode.X)){
     	 	
-        	 Debug.Log(Thumb_lower.transform.localRotation.y);
+        	 Debug.Log(Thumb_lower.transform.localRotation.x);
         	 
     	  }
     	  
