@@ -26,6 +26,8 @@ public class RobotControl : MonoBehaviour
 	public GameObject Final2;
 	public GameObject Final3;
 	
+	public GameObject Thumb_lower;
+	public GameObject Thumb_upper;
 	
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,6 @@ public class RobotControl : MonoBehaviour
     }
     
     
-
     // Update is called once per frame
     void Update()
     {
@@ -45,38 +46,70 @@ public class RobotControl : MonoBehaviour
         	LowerPlatformBase.transform.Rotate(0.0f, -1.0f, 0.0f, Space.Self);
          }
          if (Input.GetKey(KeyCode.W)){
+          if (LowerArm1.transform.localRotation.x < .453){
          	LowerArm1.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
          	LowerArm2.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
          	LowerArm3.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
          	LowerGear1.transform.Rotate(-.5f, 0.0f, 0.0f, Space.Self);
          	LowerGear2.transform.Rotate(-.5f, 0.0f, 0.0f, Space.Self);
          	LowerGear3.transform.Rotate(-.5f, 0.0f, 0.0f, Space.Self);
+         	}
          }
          if (Input.GetKey(KeyCode.S)){
-         	
+         	if (LowerArm1.transform.localRotation.x > -.176){
          	LowerArm1.transform.Rotate(-1.0f, 0.0f, 0.0f, Space.Self);
          	LowerArm2.transform.Rotate(-1.0f, 0.0f, 0.0f, Space.Self);
          	LowerArm3.transform.Rotate(-1.0f, 0.0f, 0.0f, Space.Self);
          	LowerGear1.transform.Rotate(.5f, 0.0f, 0.0f, Space.Self);
          	LowerGear2.transform.Rotate(.5f, 0.0f, 0.0f, Space.Self);
          	LowerGear3.transform.Rotate(.5f, 0.0f, 0.0f, Space.Self);
+         	}
          }
          
          if (Input.GetKey(KeyCode.UpArrow)){
-        	UpperArm1.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
-        	UpperArm2.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
-        	UpperArm3.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
-        	Final1.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
-        	Final2.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
-        	Final3.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
+       		  if (UpperArm1.transform.localRotation.x < .4){
+        		UpperArm1.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
+        		UpperArm2.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
+        		UpperArm3.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
+        		Final1.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
+        		Final2.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
+        		Final3.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
+        	}
     	  }
     	 if (Input.GetKey(KeyCode.DownArrow)){
+    	 	 if (UpperArm1.transform.localRotation.x > -.66){
         	 UpperArm1.transform.Rotate(-1.0f, 0.0f, 0.0f, Space.Self);
         	 UpperArm2.transform.Rotate(-1.0f, 0.0f, 0.0f, Space.Self);
         	 UpperArm3.transform.Rotate(-1.0f, 0.0f, 0.0f, Space.Self);
         	 Final1.transform.Rotate(-.5f, 0.0f, 0.0f, Space.Self);
         	 Final2.transform.Rotate(-.5f, 0.0f, 0.0f, Space.Self);
         	 Final3.transform.Rotate(-.5f, 0.0f, 0.0f, Space.Self);
+        	 }
+        	 
+        	 
+         }
+        	 
+        if (Input.GetKey(KeyCode.LeftArrow)){
+    	 	 if (Thumb_lower.transform.localRotation.x < .99){
+        	 Thumb_lower.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
+        	 Thumb_upper.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
+        	}	 
+        	 
     	  }
+    	if (Input.GetKey(KeyCode.RightArrow)){
+    	 	if (Thumb_lower.transform.localRotation.x < .81){
+        	Thumb_lower.transform.Rotate(-1.0f, 0.0f, 0.0f, Space.Self);
+        	Thumb_upper.transform.Rotate(-.50f, 0.0f, 0.0f, Space.Self);
+        	 }	 
+        	 
+    	  }
+    	  
+    	  if (Input.GetKey(KeyCode.X)){
+    	 	
+        	 Debug.Log(Thumb_lower.transform.localRotation.y);
+        	 
+    	  }
+    	  
+    	  
     }
 }
