@@ -2091,9 +2091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebe3e72c2d2940ddbb023f0fd87f6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedGear: {fileID: 0}
-  gears: []
   LowerPlatformBase: {fileID: 2118601031}
+  temp: {fileID: 0}
   LowerArm1: {fileID: 869789986}
   LowerArm2: {fileID: 1852359872}
   LowerArm3: {fileID: 1979254939}
@@ -2108,6 +2107,7 @@ MonoBehaviour:
   Final3: {fileID: 542679445}
   Thumb_lower: {fileID: 663302439}
   Thumb_upper: {fileID: 320374078}
+  item: {fileID: 1302360619}
 --- !u!1 &542679445
 GameObject:
   m_ObjectHideFlags: 0
@@ -4543,7 +4543,7 @@ GameObject:
   - component: {fileID: 1302360620}
   - component: {fileID: 1302360624}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Cubeobj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7093,9 +7093,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebe3e72c2d2940ddbb023f0fd87f6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedGear: {fileID: 978509596}
-  gears: []
   LowerPlatformBase: {fileID: 0}
+  temp: {fileID: 0}
   LowerArm1: {fileID: 0}
   LowerArm2: {fileID: 0}
   LowerArm3: {fileID: 0}
@@ -7110,6 +7109,7 @@ MonoBehaviour:
   Final3: {fileID: 0}
   Thumb_lower: {fileID: 0}
   Thumb_upper: {fileID: 0}
+  item: {fileID: 0}
 --- !u!23 &1833816537
 MeshRenderer:
   m_ObjectHideFlags: 0

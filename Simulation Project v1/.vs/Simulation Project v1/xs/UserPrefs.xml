@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{9B5C75A2-6365-22B5-98E5-114B364CC082}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/RobotControl.cs">
+    <Files>
+      <File FileName="Assets/RobotControl.cs" Line="55" Column="74" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Simulation Project v1" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="RobotControl.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d3dd974e-b39d-4b2e-bd77-43e9490cc1e2" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

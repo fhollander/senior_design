@@ -6,9 +6,10 @@ public class RobotControl : MonoBehaviour
 
 {
 
-	public GameObject selectedGear;
-	public List<GameObject> gears;
+	
 	public GameObject LowerPlatformBase;
+	public GameObject temp;
+	
 	public GameObject LowerArm1;
 	public GameObject LowerArm2;
 	public GameObject LowerArm3;
@@ -29,10 +30,16 @@ public class RobotControl : MonoBehaviour
 	public GameObject Thumb_lower;
 	public GameObject Thumb_upper;
 	
+	public GameObject item;
+	
+	bool switch1 = false;
+
+
+	
     // Start is called before the first frame update
     void Start()
     {
-        LowerPlatformBase.transform.Rotate(0.0f, 10.0f, 0.0f, Space.Self);
+       
     }
     
     
@@ -41,10 +48,24 @@ public class RobotControl : MonoBehaviour
     {
        	if (Input.GetKey(KeyCode.A)){
         	LowerPlatformBase.transform.Rotate(0.0f, 1.0f, 0.0f, Space.Self);
-         }
+            if (switch1 == true)
+            {
+               //// item.transform.parent = LowerPlatformBase.transform;
+               // item.transform.position = LowerPlatformBase.transform.position;
+               // item.transform.rotation = UpperArm2.transform.rotation;
+            }
+
+        }
          if (Input.GetKey(KeyCode.D)){
         	LowerPlatformBase.transform.Rotate(0.0f, -1.0f, 0.0f, Space.Self);
-         }
+            if (switch1 == true)
+            {
+              ///  item.transform.parent = LowerPlatformBase.transform;
+               // item.transform.position = LowerPlatformBase.transform.position;
+              //  item.transform.rotation = UpperArm2.transform.rotation;
+            }
+
+        }
          if (Input.GetKey(KeyCode.W)){
           if (LowerArm1.transform.localRotation.x < .453){
          	LowerArm1.transform.Rotate(1.0f, 0.0f, 0.0f, Space.Self);
@@ -63,6 +84,8 @@ public class RobotControl : MonoBehaviour
          	LowerGear1.transform.Rotate(.5f, 0.0f, 0.0f, Space.Self);
          	LowerGear2.transform.Rotate(.5f, 0.0f, 0.0f, Space.Self);
          	LowerGear3.transform.Rotate(.5f, 0.0f, 0.0f, Space.Self);
+         	
+         	
          	}
          }
          
@@ -74,8 +97,22 @@ public class RobotControl : MonoBehaviour
         		Final1.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
         		Final2.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
         		Final3.transform.Rotate(.50f, 0.0f, 0.0f, Space.Self);
+        		
+        		
+        		
+        		
+        		//item.GetComponent<Rigidbody>().useGravity = false;
+      			//item.GetComponent<Rigidbody>().isKinematic = true;
+     		   // item.transform.position = Final2.transform.position;
+   	 		  //  item.transform.rotation = Final2.transform.rotation;
+   	 		  
+   	 			if(switch1 == true){
+   	 		   		item.transform.parent=Final1.transform;
+   	 			}
         	}
     	  }
+    	  
+    	  
     	 if (Input.GetKey(KeyCode.DownArrow)){
     	 	 if (UpperArm1.transform.localRotation.x > -.66){
         	 UpperArm1.transform.Rotate(-1.0f, 0.0f, 0.0f, Space.Self);
@@ -84,10 +121,19 @@ public class RobotControl : MonoBehaviour
         	 Final1.transform.Rotate(-.5f, 0.0f, 0.0f, Space.Self);
         	 Final2.transform.Rotate(-.5f, 0.0f, 0.0f, Space.Self);
         	 Final3.transform.Rotate(-.5f, 0.0f, 0.0f, Space.Self);
-        	 }
-        	 
-        	 
-         }
+        	
+        	        		
+        		
+        		//item.GetComponent<Rigidbody>().useGravity = false;
+      			//item.GetComponent<Rigidbody>().isKinematic = true;
+     		    //item.transform.position = Final2.transform.position;
+   	 		  //  item.transform.rotation = Final2.transform.rotation;
+   	 		  
+   	 		if(switch1 == true){
+   	 		   	item.transform.parent=Final1.transform;
+   	 		} 
+         }	 
+      }
         	 
         if (Input.GetKey(KeyCode.LeftArrow)){
     	 	 if (Thumb_lower.transform.localRotation.y < .96){
@@ -105,11 +151,32 @@ public class RobotControl : MonoBehaviour
     	  }
     	  
     	  if (Input.GetKey(KeyCode.X)){
-    	 	
         	 Debug.Log(LowerArm1.transform.localRotation.x);
+            if (switch1 == false)
+            {
+                switch1 = true;
+                item.transform.parent = LowerPlatformBase.transform;
+            }
+            else
+            {
+                switch1 = false;
+                item.transform.parent = null;
+            }
         	 
     	  }
     	  
     	  
+    	
+    	  
+    }
+    
+    void OnButton () {
+    
+    	item.GetComponent<Rigidbody>().useGravity = false;
+        item.GetComponent<Rigidbody>().isKinematic = true;
+        item.transform.position = LowerPlatformBase.transform.position;
+   	    item.transform.rotation = LowerPlatformBase.transform.rotation;
+    
+    
     }
 }
